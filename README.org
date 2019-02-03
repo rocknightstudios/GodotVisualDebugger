@@ -1,0 +1,37 @@
+#+ATTR_ORG: :width 400
+* Godot Visual Debugger (GVD)
+Debug Godot engine 3.0x games, while they are running.
+(It is still early in development, so do expect unexpected!)
+** Installation instructions
+- Copy Visual Debugger directory into your project.
+- Add VDGlobal.gd to auto load.
+- Add "visual_debugger" keybinding to Input map.
+** How to use
+- Use the "visual_debugger" keybinding to open and close the GVD.
+- Use F9 to step/pause.
+- Use Ctrl+F9 to Run.
+- Use F10 to Zoom to position.
+- Use F11 to center around mouse cursor.
+- Hold F11 and move mouse to continue following centered around the mouse cursor.
+- Use Ctrl+Mouse wheel to zoom in and out (Hold Shift to do it faster)
+- Press middle mouse button and move mouse around to drag world around.
+- Use mouse wheel to increase/decrease visual selection radius (when visual select is enabled).
+- Left click to visually select nodes under selection radius.
+- Use side pane GUI elements to control GVD behaviour and perform many other operations.
+** FAQ
+- Q: Why does GVD turns red.
+- A: Because it can't find game camera anymore (Refresh the tree in Watches tab to make it nice and blue again).
+- Q: Visual Debugger doesn't fit my game size, what do I do?
+- A: Change Visual Debugger topmost node (CanvasLayer) scale. Remember that to avoid text becoming unreadable you must
+  set Stretch mode to 2D in Settings->Window.
+- Q: Hmm... positioning in the world is all wrong!?
+- A: Remember that you can change Camera Anchor mode in the Camera tab (Usually Fixed top Left corner works best). Also
+  remember that camera anchor mode is reset after refreshing the scene tree. Also remember that Godot will use Test
+  values from the Settings->Window->Size, it is better to set them to 0.
+** Known problems
+- If child viewport container is used in a game scene, then it may become impossible to click on GVD if the Run mode is
+  enabled. To fight the problem, one can close and open GVD. Or more permanent solution is you can use GVD scene tree or
+  Remote, go to the child Viewport of the ill behaving ViewportContainer and set "Disable Input" to true.
+** Contact us.
+- You can find us streaming on Twitch every weekday: https://www.twitch.tv/rocknightstudios
+- So don't be shy come by and ask away!
